@@ -1,8 +1,10 @@
 '''Файл, в котором реализуется алгоритм двух указателей'''
+
+
 def two_point(iterable, k):
     '''Алгоритм двух указателей'''
     left_index = 0
-    right_index = len(iterable) -1
+    right_index = len(iterable) - 1
     while left_index != right_index:
         if iterable[left_index] + iterable[right_index] == k:
             return [iterable[left_index], iterable[right_index]]
