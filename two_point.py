@@ -13,4 +13,6 @@ def two_point(iterable, k):
             l += 1
     return []
 
-print(two_point(nums, 44+48))
+
+if __name__ == '__main__':
+    print(two_point(nums, 24))
