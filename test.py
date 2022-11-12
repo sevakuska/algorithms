@@ -54,6 +54,15 @@ class TestAlgorithms(unittest.TestCase):
             second=algorithms.selection_sort(test_list),
             msg='Should be [-2, 1, 15, 25, 27, 30, 40]'
         )
+    
+    def test_quick_sort(self):
+        test_list = [30, 25, 40, 1, 15, -2, 27]
+        sorted_list = [-2, 1, 15, 25, 27, 30, 40]
+        self.assertEqual(
+            first=sorted_list,
+            second=algorithms.quick_sort(test_list),
+            msg='Should be [-2, 1, 15, 25, 27, 30, 40]'
+        )
 
 
 if __name__ == '__main__':
