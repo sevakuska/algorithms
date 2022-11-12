@@ -57,6 +57,7 @@ def selection_sort(iterable):
         new_list.append(iterable.pop(smallest))
     return new_list
 
+
 def quick_sort(iterable):
     if len(iterable) < 2:
         return iterable
