@@ -68,8 +68,9 @@ def quick_sort(iterable):
 
 
 def bubble_sort(iterable):
-    for _ in range(len(iterable)):
-        for i in range(len(iterable) - 1):
+    iterations = len(iterable) - 1
+    for _ in range(iterations):
+        for i in range(iterations):
             if iterable[i] > iterable[i+1]:
                 iterable[i], iterable[i+1] = iterable[i+1], iterable[i]
     return iterable
