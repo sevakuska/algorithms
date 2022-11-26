@@ -65,3 +65,11 @@ def quick_sort(iterable):
     less = [i for i in iterable[1:] if i < pivot]
     greater = [i for i in iterable[1:] if i > pivot]
     return quick_sort(less) + [pivot] + quick_sort(greater)
+
+
+def bubble_sort(iterable):
+    for _ in range(len(iterable)):
+        for i in range(len(iterable) - 1):
+            if iterable[i] > iterable[i+1]:
+                iterable[i], iterable[i+1] = iterable[i+1], iterable[i]
+    return iterable
