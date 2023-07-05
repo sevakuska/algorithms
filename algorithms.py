@@ -45,7 +45,7 @@ def find_smallest(iterable):
     if len(iterable) == 0:
         raise ValueError
     if len(iterable) == 1:
-        return iterable[0]
+        return 0
     
     smallest = iterable[0]
     smallest_index = 0
@@ -60,10 +60,9 @@ def find_smallest(iterable):
 
 def selection_sort(iterable):
     new_list = []
-
-    for _ in range(len(iterable)):
-        smallest = find_smallest(iterable)
-        new_list.append(iterable.pop(smallest))
+    
+    while iterable:
+        new_list.append(iterable.pop(find_smallest(iterable)))
     
     return new_list
 

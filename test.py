@@ -12,7 +12,7 @@ class TestAlgorithms(unittest.TestCase):
             msg='Should be 6'
         )
         self.assertEqual(
-            first=-1,
+            first=None,
             second=algorithms.binary_search(test_list, 0),
             msg='Should be -1'
         )
