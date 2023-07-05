@@ -1,4 +1,5 @@
-from math import log2, ceil
+from math import log2
+from math import ceil
 
 
 def binary_search(iterable, item):
