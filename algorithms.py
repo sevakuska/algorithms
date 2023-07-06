@@ -26,20 +26,20 @@ def two_point(iterable, k):
 
     while left_index < right_index:
         if iterable[left_index] + iterable[right_index] == k:
-            return (iterable[left_index], iterable[right_index])
+            return iterable[left_index], iterable[right_index]
         elif iterable[left_index] + iterable[right_index] > k:
             right_index -= 1
         else:
             left_index += 1
 
-    return (None, None)
+    return None, None
 
 
-def recursive_sum(lterable):
-    if not lterable:
+def recursive_sum(iterable):
+    if not iterable:
         return 0
     
-    return lterable[0] + recursive_sum(lterable[1:])
+    return iterable[0] + recursive_sum(iterable[1:])
 
 
 def find_smallest(iterable):
