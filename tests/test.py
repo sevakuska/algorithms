@@ -1,12 +1,13 @@
-import unittest
+from unittest import TestCase
 
-from algorithms.search.binary import binary_search
-from algorithms.sort.bubble import bubble_sort
-from algorithms.sort.quick import quick_sort
-from algorithms.sort.selection import selection_sort
+from algorithms import binary_search
+from algorithms import linear_search
+from algorithms import bubble_sort
+from algorithms import quick_sort
+from algorithms import selection_sort
 
 
-class TestAlgorithms(unittest.TestCase):
+class TestAlgorithms(TestCase):
     def test_binary_search(self):
         test_list = [1, 4, 5, 10, 11, 14, 27, 34, 40]
         self.assertEqual(
@@ -17,8 +18,29 @@ class TestAlgorithms(unittest.TestCase):
         self.assertEqual(
             first=None,
             second=binary_search(test_list, 0),
-            msg='Must be -1'
+            msg='Must be None'
         )
+        try:
+            binary_search(test_list, 0, strict=True)
+        except ValueError:
+            pass
+
+    def test_linear_search(self):
+        test_list = [1, 4, 5, 10, 11, 14, 27, 34, 40]
+        self.assertEqual(
+            first=6,
+            second=linear_search(test_list, 27),
+            msg='Must be 6'
+        )
+        self.assertEqual(
+            first=None,
+            second=linear_search(test_list, 0),
+            msg='Must be None'
+        )
+        try:
+            linear_search(test_list, 0, strict=True)
+        except ValueError:
+            pass
 
     def test_selection_sort(self):
         test_list = [30, 25, 40, 1, 15, -2, 27]
@@ -46,7 +68,3 @@ class TestAlgorithms(unittest.TestCase):
             second=bubble_sort(test_list),
             msg='Must be [-2, 1, 15, 25, 27, 30, 40]'
         )
-
-
-if __name__ == '__main__':
-    unittest.main()

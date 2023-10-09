@@ -1,6 +1,9 @@
-def quick_sort(iterable):
+from typing import Sequence
+
+
+def quick_sort(iterable: Sequence[int | float]) -> list[int | float]:
     if len(iterable) < 2:
-        return iterable
+        return list(iterable)
 
     pivot = iterable[0]
     less = [i for i in iterable[1:] if i < pivot]
